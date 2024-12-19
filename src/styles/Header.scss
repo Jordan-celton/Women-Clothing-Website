@@ -1,0 +1,94 @@
+@import '../index.scss';
+
+.header {
+    width: 100%;
+    background-color: $background-color2;
+
+    &__green__line {
+        display: flex;
+        justify-content: center;
+        background-color: $background-color;
+        color: $background-color2;
+        align-items: center;
+        padding: 5px 0;
+        font-size: $base-font-size;
+        font-weight: 600;
+        height: 30px;
+    }
+
+    &__logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__logo {
+            border: 1px solid $text-color;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+
+        img {
+            max-height: 50px; // Taille maximum pour le logo
+            margin-right: 10px;
+        }
+
+        p {
+            font-size: 10px;
+            color: $text-color2;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: center;
+
+        &__list {
+            display: flex;
+            gap: 24px; // Espacement entre les éléments
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                font-size: 18px;
+                color: $text-color2;
+                cursor: pointer;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: #007bff; 
+                }
+            }
+        }
+    }
+
+    &__icon {
+        display: flex;
+        gap: 24px; 
+
+        i {
+            font-size: 18px;
+            color: $text-color;
+            cursor: pointer;
+
+            &:hover {
+                color: #007bff; // Couleur au survol
+            }
+        }
+    }
+
+    // Conteneur principal pour aligner le logo, menu et icônes
+    display: flex;
+    flex-direction: column;
+
+    // Ligne avec logo, menu et icônes alignés
+    .header__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 70px;
+    }
+}
+
+
+
+

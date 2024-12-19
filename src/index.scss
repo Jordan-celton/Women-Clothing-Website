@@ -1,0 +1,20 @@
+// Variables de couleurs
+$text-color: #0C0C0C;
+$background-color: #5A6D57;
+$color-tertiary: #404040;
+$text-color2: #404040;
+$background-color2: #FFFFFF;
+
+// Polices
+$font-primary: 'Montserrat', sans-serif;
+$base-font-size: 16px;
+
+
+
+// Styles globaux
+body {
+    font-family: $font-primary;
+    font-size: $base-font-size;
+    margin: 0;
+    padding: 0;
+}

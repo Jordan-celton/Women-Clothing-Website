@@ -1,0 +1,47 @@
+@import '../index.scss';
+ 
+ // Style pour le sous-menu
+ .menu__slider {
+     display: none; // Caché par défaut
+     position: absolute;
+     top: 100%; // Positionner le sous-menu sous le menu principal
+     left: 0;
+     background-color: $background-color2;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     width: auto;
+     padding: 10px;
+     justify-content: space-between;
+     align-items: center;
+     display: flex;
+     flex-direction: row; // Affichage horizontal des éléments du sous-menu
+
+     ul {
+         list-style: none;
+         padding: 0;
+         margin: 0;
+         display: flex;
+         gap: 24px; // Espacement horizontal entre les éléments du sous-menu
+
+         li {
+             padding: 5px 10px;
+             cursor: pointer;
+             font-size: 14px;
+
+             &:hover {
+                 color: #007bff;
+             }
+         }
+     }
+
+     .menu__slider__img {
+         display: flex;
+         gap: 15px;
+         margin-left: 20px;
+
+         img {
+             width: 100px; // Taille des images à ajuster selon votre besoin
+             height: auto;
+             border-radius: 8px;
+         }
+     }
+ }

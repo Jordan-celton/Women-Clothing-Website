@@ -3,7 +3,7 @@ import React from "react";
 const Sustainability = () => {
   return (
     <>
-      <div className="menu__slider">
+      <div className="menu__slider__list">
         <h3>Sustainability</h3>
         <ul>
           <li>Mission</li>

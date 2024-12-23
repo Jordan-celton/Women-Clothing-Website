@@ -4,7 +4,7 @@ import "../styles/Menu.scss";
 const PlusSize = () => {
   return (
     <>
-      <div className="menu__slider">
+      <div className="menu__slider__list">
         <h3>Category</h3>
         <ul>
           <li>Shop All</li>

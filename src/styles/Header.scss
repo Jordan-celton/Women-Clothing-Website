@@ -1,8 +1,12 @@
 @import '../index.scss';
 
+// Style pour le header
 .header {
     width: 100%;
     background-color: $background-color2;
+    position: relative;
+    z-index: 1000;
+    overflow: visible;
 
     &__green__line {
         display: flex;
@@ -20,9 +24,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-
-    &__logo {
         border: 1px solid $text-color;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 
@@ -47,6 +48,7 @@
             list-style: none;
             padding: 0;
             margin: 0;
+            position: relative; // Nécessaire pour afficher le sous-menu
 
             li {
                 font-size: 18px;
@@ -54,10 +56,6 @@
                 cursor: pointer;
                 position: relative; // Nécessaire pour afficher le sous-menu
                 transition: color 0.3s ease;
-
-                &:hover {
-                    color: #007bff;
-                }
 
                 // Styles pour afficher le sous-menu horizontalement lors du survol
                 &:hover .menu__slider {
@@ -93,4 +91,56 @@
         justify-content: space-between;
         padding: 10px 70px;
     }
+}
+
+// Style pour le sous-menu
+.menu__slider {
+    position: absolute;
+    top: 100%; // S'affiche sous l'élément parent (le `li`)
+    left: 0; // Aligné à gauche
+    width: 100vw; // Prend toute la largeur de la fenêtre
+    background-color: $background-color2; // Couleur de fond
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Ombre pour une meilleure séparation
+    padding: 20px;
+    z-index: 1001; // S'assure qu'il apparaît au-dessus des autres éléments
+
+    // Animation pour un effet fluide
+    opacity: 0;
+    transform: translateY(-10px); // Décalage initial pour l'animation
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    // Enlever le display: none et utiliser opacity + transform pour l'animation
+    &.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Liste du sous-menu
+.menu__slider__list {
+    margin-right: 20px;
+    padding-right: 15px;
+
+    &:last-child {
+        border-right: none;
+    }
+
+    h3 {
+        margin-bottom: 10px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin: 5px 0;
+        }
+    }
+}
+
+// Images du sous-menu
+.menu__slider__img img {
+    max-width: 100px;
+    margin: 5px;
 }

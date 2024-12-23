@@ -4,7 +4,7 @@ import "../styles/Menu.scss";
 const NewIn = () => {
   return (
     <>
-      <div className="menu__slider">
+      <div className="menu__slider__list">
         <h3>Category</h3>
         <ul>
           <li>Shop All</li>
@@ -17,7 +17,7 @@ const NewIn = () => {
           <li>Shorts & Skirts</li>
         </ul>
       </div>
-      <div className="menu__slider">
+      <div className="menu__slider__list">
         <h3>Trending</h3>
         <ul>
           <li>Plus Size</li>

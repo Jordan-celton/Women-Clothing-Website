@@ -1,47 +1,74 @@
 @import '../index.scss';
- 
- // Style pour le sous-menu
- .menu__slider {
-     display: none; // Caché par défaut
-     position: absolute;
-     top: 100%; // Positionner le sous-menu sous le menu principal
-     left: 0;
-     background-color: $background-color2;
-     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-     width: auto;
-     padding: 10px;
-     justify-content: space-between;
-     align-items: center;
-     display: flex;
-     flex-direction: row; // Affichage horizontal des éléments du sous-menu
 
-     ul {
-         list-style: none;
-         padding: 0;
-         margin: 0;
-         display: flex;
-         gap: 24px; // Espacement horizontal entre les éléments du sous-menu
+// Style pour le sous-menu
+.menu__slider {
+    position: absolute;
+    top: 100%; // S'affiche juste en dessous de l'élément parent (le `li`)
+    left: 0;
+    width: 100vw; // Prend toute la largeur de la fenêtre
+    background-color: $background-color2;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 1001; // Pour s'assurer qu'il apparaît au-dessus des autres éléments
 
-         li {
-             padding: 5px 10px;
-             cursor: pointer;
-             font-size: 14px;
+    // Animation fluide
+    opacity: 0;
+    transform: translateY(-10px); // Effet de décalage initial
+    transition: opacity 0.3s ease, transform 0.3s ease;
 
-             &:hover {
-                 color: #007bff;
-             }
-         }
-     }
+    // Lorsque le sous-menu est actif
+    &.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-     .menu__slider__img {
-         display: flex;
-         gap: 15px;
-         margin-left: 20px;
+.menu__slider__list {
+    margin-right: 20px;
+    padding-right: 15px;
 
-         img {
-             width: 100px; // Taille des images à ajuster selon votre besoin
-             height: auto;
-             border-radius: 8px;
-         }
-     }
- }
+    &:last-child {
+        border-right: none;
+    }
+
+    h3 {
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin: 5px 0;
+            font-size: 14px;
+            color: $text-color2;
+            cursor: pointer;
+        }
+    }
+}
+
+// Images dans le sous-menu
+.menu__slider__img {
+    display: flex;
+    gap: 10px;
+
+    img {
+        max-width: 100px;
+        margin: 5px;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+        object-fit: cover ;
+
+        &:hover {
+            transform: scale(1.05); // Effet de zoom sur l'image au survol
+        }
+    }
+}
+
+// Assurez-vous que l'élément parent du sous-menu a une position relative pour que le sous-menu soit positionné correctement.
+.header__menu__list {
+    position: relative; // Nécessaire pour positionner le sous-menu à l'intérieur du menu
+}

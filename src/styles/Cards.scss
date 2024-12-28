@@ -8,8 +8,9 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
-        /* Pour s'adapter au conteneur parent */
+        width: 1224px;
+        height: 546px;
+       
 
         h3 {
             margin-bottom: 20px;
@@ -39,12 +40,10 @@
             /* Nécessaire pour positionner le cœur */
             text-align: center;
             /* Centrer tout le contenu textuel */
-            max-width: 300px;
-            /* Limite la largeur pour un design cohérent */
 
             img {
-                width: 250px;
-                height: 250px;
+                width: 392px;
+                height: 438px;
                 object-fit: cover;
                 /* Assure un recadrage propre */
                 border: 1px solid #ddd;

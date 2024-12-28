@@ -6,3 +6,34 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.hero__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.hero__content h1 {
+    font-size: 3rem;
+    color: $text-color;
+    margin-bottom: 1rem;
+}
+
+.hero__content p {
+    font-size: 1.5rem;
+    color: $text-color;
+    margin-bottom: 1rem;
+}
+
+.hero__content button {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    color: $text-color;
+    background-color: $background-color;
+    border: none;
+    cursor: pointer;
+}
+
+

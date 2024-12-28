@@ -9,8 +9,8 @@ const Banner = () => {
         style={{ backgroundImage: `url('/images/hero-background.png')` }}
       >
         <div className="hero__content">
-          <p>Modima</p>
-          <p>Discover the latest trends in </p>
+          <p>Elegance In Simplicity</p>
+          <p>Earth's Harmony </p>
         </div>
 
         <div className="hero__cta">

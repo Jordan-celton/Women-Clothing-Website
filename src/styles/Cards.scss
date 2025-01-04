@@ -1,106 +1,186 @@
+@import '../index.scss';
+
 .cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  .card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    width: 1224px;
+    height: 546px;
 
-    .card {
+    h3 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .card__header {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 10px;
+
+      p {
+        margin: 0;
+        font-size: 14px;
+      }
+
+      button {
+        padding: 5px 10px;
+        border: none;
+        color: $background-color; // Remplacez $background-color par la couleur que vous souhaitez
+        font-size: 14px;
+        cursor: pointer;
+        background: none;
+      }
+    }
+
+    // Conteneur des images
+    .card__items {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    // Style des éléments individuels
+.card__item {
+  position: relative;
+  /* Conteneur positionné pour gérer les enfants en position absolue */
+  width: 392px;
+  /* La même largeur que l'image */
+  height: 438px;
+  /* La même hauteur que l'image */
+  text-align: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+     // Bouton Next
+     .next__button {
+       position: absolute;
+       bottom: 10px;
+       /* Position en bas de l'image */
+       left: 50%;
+       /* Centrage horizontal */
+       transform: translateX(-50%);
+       background-color: $background-color; 
+       color: $background-color2;
+       border: none;
+       padding: 10px 20px;
+       font-size: 16px;
+       width: 90%;
+       cursor: pointer;
+       opacity: 0;
+       /* Masqué par défaut */
+       pointer-events: none;
+       /* Empêche les clics lorsqu'il est masqué */
+       transition: opacity 0.3s ease;
+       /* Apparition fluide */
+     }
+  
+     // Afficher le bouton au survol
+     &:hover .next__button {
+       opacity: 1;
+       /* Rendre visible */
+       pointer-events: auto;
+       /* Activer les clics */
+     }
+
+  .card__like {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+
+    i {
+      font-size: 20px;
+      color: black;
+
+      &.liked {
+        color: red;
+      }
+    }
+  }
+}
+
+      h4 {
+        margin: 10px 0 5px;
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      // Description du produit
+      .card__item__description {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        width: 1224px;
-        height: 546px;
-       
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0 10px;
 
-        h3 {
-            margin-bottom: 20px;
-            text-align: center;
-            /* Centrer le titre */
+        p {
+          display: flex;
+          flex-direction: row;
+          margin: 0;
+          font-size: 14px;
         }
+      }
 
-        /* Conteneur pour les images */
-        .card__items {
-            display: flex;
-            justify-content: center;
-            /* Centre les items horizontalement */
-            gap: 20px;
-            /* Espacement entre les images */
-            flex-wrap: wrap;
-            /* Permet de passer à la ligne si nécessaire */
-            width: 100%;
-            /* Assure un bon alignement */
+            .description-row {
+              display: flex;
+              /* Aligne les éléments enfants en ligne */
+              justify-content: space-between;
+              /* Espace entre les éléments */
+              align-items: center;
+              /* Aligne verticalement au centre */
+              width: 100%;
+              /* Prend toute la largeur disponible */
+      
+              p {
+                margin: 0;
+                /* Supprime les marges par défaut */
+                font-size: 14px;
+                color: #666;
+      
+                &:last-child {
+                  font-weight: bold;
+                  /* Met en valeur le prix */
+                  font-size: 16px;
+                  /* Augmente légèrement la taille du prix */
+                  color: #000;
+                }
+              }
+            }
+            }
+
+
+      // Cercle de couleurs
+      .color-circles {
+        display: flex;
+        justify-content: flex-start;
+        gap: 8px;
+
+        .circle {
+          display: flex;
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          border: 1px solid #ddd;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease;
         }
-
-        /* Chaque élément contenant une image et ses cercles de couleur */
-        .card__item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            /* Nécessaire pour positionner le cœur */
-            text-align: center;
-            /* Centrer tout le contenu textuel */
-
-            img {
-                width: 392px;
-                height: 438px;
-                object-fit: cover;
-                /* Assure un recadrage propre */
-                border: 1px solid #ddd;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                margin-bottom: 10px;
-            }
-
-            /* Bouton de like */
-            .card__like {
-                position: absolute;
-                top: 10px;
-                right: 10px;
-                font-size: 20px;
-                color: black;
-                /* Couleur par défaut */
-                cursor: pointer;
-                transition: color 0.3s ease;
-
-                &.liked {
-                    color: red;
-                    /* Couleur lorsque liké */
-                }
-            }
-
-            h4 {
-                margin: 10px 0 5px;
-                font-size: 16px;
-                font-weight: 600;
-            }
-
-            .card__item__description {
-                display: flex;
-                justify-content: space-between;
-                width: 100%;
-                /* Utilise toute la largeur de la carte */
-                padding: 0 10px;
-
-                p {
-                    margin: 0;
-                    font-size: 14px;
-                }
-            }
-
-            .color-circles {
-                display: flex;
-                justify-content: center;
-                /* Centre les cercles */
-                gap: 8px;
-
-                .circle {
-                    width: 15px;
-                    height: 15px;
-                    border-radius: 50%;
-                    border: 1px solid #ddd;
-                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                }
-            }
-        }
+      }
     }
-}
+  
+

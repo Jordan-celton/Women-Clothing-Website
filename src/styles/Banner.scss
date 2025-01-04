@@ -13,27 +13,30 @@
     justify-content: center;
     align-items: flex-start;
     height: 100%;
-}
-
-.hero__content h1 {
-    font-size: 3rem;
-    color: $text-color;
-    margin-bottom: 1rem;
+    padding: 0 4rem;
+    font-style: italic;
+    font-weight: bold;
+    font-family: 'Gill Sans MT' , sans-serif;
 }
 
 .hero__content p {
-    font-size: 1.5rem;
+    font-size: 34px;
     color: $text-color;
-    margin-bottom: 1rem;
 }
 
 .hero__content button {
-    padding: 1rem 2rem;
-    font-size: 1.5rem;
+    padding: 1rem 5rem;
+    margin-top: 1rem;
+    background-color: $background-color2;
     color: $text-color;
-    background-color: $background-color;
     border: none;
+    font-size: 14px;
     cursor: pointer;
+    font-family: $font-primary;
 }
+
+
+
+
 
 

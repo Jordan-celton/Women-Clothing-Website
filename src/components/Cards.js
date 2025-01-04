@@ -13,8 +13,10 @@ const Cards = () => {
   return (
     <section className="cards">
       <div className="card">
-        <h3>Best Sellers</h3>
-        {/* Conteneur des images alignées sur une ligne */}
+        <div className="card__header">
+          <h3>Best Sellers</h3>
+          <button>View All</button>
+        </div>
         <div className="card__items">
           {/* Image 1 */}
           <div className="card__item">
@@ -27,10 +29,13 @@ const Cards = () => {
             </div>
 
             <img src="/images/stretch.png" alt="Stretch" />
-            <h4>Tailored Stretch</h4>
+            <button className="next__button">Next</button>
             <div className="card__item__description">
-              <p>Turn It Up Pants</p>
-              <p>$180</p>
+              <h4>Tailored Stretch</h4>
+              <div className="description-row">
+                <p>Make A Splash</p>
+                <p>$120</p>
+              </div>
             </div>
             <div className="color-circles">
               <span
@@ -58,10 +63,14 @@ const Cards = () => {
             </div>
 
             <img src="/images/silk.png" alt="Silk" />
-            <h4>Technical Silk</h4>
+            <button className="next__button">Next</button>
+
             <div className="card__item__description">
-              <p>Make A Splash</p>
-              <p>$120</p>
+              <h4>Technical Silk</h4>
+              <div className="description-row">
+                <p>Make A Splash</p>
+                <p>$120</p>
+              </div>
             </div>
             <div className="color-circles">
               <span
@@ -89,6 +98,7 @@ const Cards = () => {
             </div>
 
             <img src="/images/Dresses.png" alt="Dresses" />
+            <button className="next__button">Next</button>
             <h4>Cool Weave</h4>
             <div className="card__item__description">
               <p>Anywhere Dress</p>
